@@ -71,6 +71,8 @@ static void schedule (void);
 void thread_schedule_tail (struct thread *prev);
 static tid_t allocate_tid (void);
 
+void thread_print_stats(void); // added new
+
 /* Initializes the threading system by transforming the code
    that's currently running into a thread.  This can't work in
    general and it is possible in this case only because loader.S
@@ -140,12 +142,12 @@ thread_tick (void)
 }
 
 /* Prints thread statistics. */
-void
-thread_print_stats (void) 
-{
-  printf ("Thread: %lld idle ticks, %lld kernel ticks, %lld user ticks\n",
-          idle_ticks, kernel_ticks, user_ticks);
-}
+// void
+// thread_print_stats (void) 
+// {
+//   printf ("Thread: %lld idle ticks, %lld kernel ticks, %lld user ticks\n",
+//           idle_ticks, kernel_ticks, user_ticks);
+// }
 
 /* Creates a new kernel thread named NAME with the given initial
    PRIORITY, which executes FUNCTION passing AUX as the argument,
@@ -582,3 +584,10 @@ allocate_tid (void)
 /* Offset of `stack' member within `struct thread'.
    Used by switch.S, which can't figure it out on its own. */
 uint32_t thread_stack_ofs = offsetof (struct thread, stack);
+
+
+void thread_print_stats(void) {
+    printf("Threads: %zu ready, %s running\n",
+           list_size(&ready_list),
+           thread_current() ? "1" : "0");
+}
