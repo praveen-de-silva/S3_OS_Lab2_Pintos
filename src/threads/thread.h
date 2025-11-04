@@ -96,10 +96,18 @@ struct thread
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
     uint32_t *pagedir;                  /* Page directory. */
+    int exitStatus;                     /* Exit status of the process. */
+    
+    /* File descriptor table. */
+    struct file *fd_table[128];         /* Array of open files. */
+    int next_fd;                        /* Next available file descriptor. */
+    struct file *executable;            /* Executable file (deny writes). */
+    struct list children;               /* List of child processes */
+    struct thread *parent;              /* Parent process */
 #endif
 
     /* Owned by thread.c. */
-    unsigned magic;                     /* Detects stack overflow. */
+    unsigned magic;       
   };
 
 /* If false (default), use round-robin scheduler.

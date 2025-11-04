@@ -465,6 +465,13 @@ init_thread (struct thread *t, const char *name, int priority)
   t->stack = (uint8_t *) t + PGSIZE;
   t->priority = priority;
   t->magic = THREAD_MAGIC;
+  
+#ifdef USERPROG
+  t->next_fd = 2;  // 0=STDIN, 1=STDOUT, start at 2
+  t->executable = NULL;  // No executable yet
+  list_init(&t->children);  // Initialize children list
+  t->parent = NULL;  // No parent initially
+#endif
 
   old_level = intr_disable ();
   list_push_back (&all_list, &t->allelem);
