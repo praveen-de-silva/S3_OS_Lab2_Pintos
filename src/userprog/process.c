@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <string.h>
 #include "userprog/gdt.h"
 #include "userprog/pagedir.h"
 #include "userprog/tss.h"
@@ -151,9 +152,6 @@ start_process (void *args_)
   /* If load failed, quit. */
   if (!success) 
     {
-      thread_current()->exitStatus = -1;
-      thread_exit ();
-    }
       thread_current()->exitStatus = -1;
       thread_exit ();
     }
