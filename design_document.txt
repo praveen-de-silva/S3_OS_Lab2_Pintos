@@ -23,9 +23,16 @@ included : argument passing, system calls, process management.
 >> text, lecture notes, and course staff.
 
 1.  B. Pfaff, “Pintos Projects: Introduction,” Stanford CS140, Dec. 29, 2009. [Online]. Available:
-    https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html [Accessed: Nov. 5, 2025].
+    https://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html [Accessed: oct. 25, 2025].
 
-2.  
+2.  “[YouTube video: OE79vNZp1KI],” YouTube. [Online]. Available: 
+    https://www.youtube.com/watch?v=OE79vNZp1KI [Accessed: oct. 25, 2025.]
+
+3.  “[YouTube video: RbsE0EQ9_dY],” YouTube. [Online]. Available: 
+    https://www.youtube.com/watch?v=RbsE0EQ9_dY [Accessed: oct. 25, 2025.]
+
+4.  “Project 2: User Programs (Fall 2021),” CS 318/418/618: Principles of Operating Systems, Johns Hopkins University. Available: 
+    https://www.cs.jhu.edu/~huang/cs318/fall21/project/project2.html [Accessed: Nov. 5, 2025.]
 
 			   ARGUMENT PASSING
 			   ================
